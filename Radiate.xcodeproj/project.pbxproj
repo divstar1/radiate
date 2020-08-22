@@ -23,8 +23,9 @@
 		8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957824F0C02C000CEF7B /* VisitCell.swift */; };
 		8811957B24F0C1A0000CEF7B /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957A24F0C1A0000CEF7B /* Visit.swift */; };
 		8811957D24F0C46E000CEF7B /* VisitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957C24F0C46E000CEF7B /* VisitsViewController.swift */; };
-		8811957F24F0C55D000CEF7B /* LocationsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957E24F0C55D000CEF7B /* LocationsStorage.swift */; };
-		8811958124F0C575000CEF7B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958024F0C575000CEF7B /* Location.swift */; };
+		8811958424F0D727000CEF7B /* AddVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958324F0D727000CEF7B /* AddVisitViewController.swift */; };
+		8811958624F0DC67000CEF7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958524F0DC67000CEF7B /* MapViewController.swift */; };
+		8811958824F0DF78000CEF7B /* MapSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +68,9 @@
 		8811957824F0C02C000CEF7B /* VisitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCell.swift; sourceTree = "<group>"; };
 		8811957A24F0C1A0000CEF7B /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
 		8811957C24F0C46E000CEF7B /* VisitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewController.swift; sourceTree = "<group>"; };
-		8811957E24F0C55D000CEF7B /* LocationsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStorage.swift; sourceTree = "<group>"; };
-		8811958024F0C575000CEF7B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		8811958224F0CE4E000CEF7B /* Route.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Route.gpx; sourceTree = "<group>"; };
+		8811958324F0D727000CEF7B /* AddVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVisitViewController.swift; sourceTree = "<group>"; };
+		8811958524F0DC67000CEF7B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +101,6 @@
 		8811952824F0862D000CEF7B = {
 			isa = PBXGroup;
 			children = (
-				8811958224F0CE4E000CEF7B /* Route.gpx */,
 				8811953324F0862D000CEF7B /* Radiate */,
 				8811954A24F0862F000CEF7B /* RadiateTests */,
 				8811955524F0862F000CEF7B /* RadiateUITests */,
@@ -121,6 +121,8 @@
 		8811953324F0862D000CEF7B /* Radiate */ = {
 			isa = PBXGroup;
 			children = (
+				8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */,
+				8811958524F0DC67000CEF7B /* MapViewController.swift */,
 				8811956524F086BA000CEF7B /* Friend.swift */,
 				8811956824F086BA000CEF7B /* FriendCell.swift */,
 				8811957824F0C02C000CEF7B /* VisitCell.swift */,
@@ -130,14 +132,13 @@
 				8811957C24F0C46E000CEF7B /* VisitsViewController.swift */,
 				8811953624F0862D000CEF7B /* SceneDelegate.swift */,
 				8811953A24F0862D000CEF7B /* Main.storyboard */,
+				8811958324F0D727000CEF7B /* AddVisitViewController.swift */,
 				8811957624F0AEF4000CEF7B /* MessageViewController.swift */,
 				8811957424F08819000CEF7B /* SignUpViewController.swift */,
 				8811953D24F0862E000CEF7B /* Assets.xcassets */,
 				8811953F24F0862E000CEF7B /* LaunchScreen.storyboard */,
 				8811954224F0862E000CEF7B /* Info.plist */,
 				8811957224F08797000CEF7B /* Common.swift */,
-				8811957E24F0C55D000CEF7B /* LocationsStorage.swift */,
-				8811958024F0C575000CEF7B /* Location.swift */,
 			);
 			path = Radiate;
 			sourceTree = "<group>";
@@ -297,13 +298,14 @@
 				8811957B24F0C1A0000CEF7B /* Visit.swift in Sources */,
 				8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */,
 				8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */,
-				8811958124F0C575000CEF7B /* Location.swift in Sources */,
-				8811957F24F0C55D000CEF7B /* LocationsStorage.swift in Sources */,
+				8811958624F0DC67000CEF7B /* MapViewController.swift in Sources */,
 				8811957D24F0C46E000CEF7B /* VisitsViewController.swift in Sources */,
 				8811953724F0862D000CEF7B /* SceneDelegate.swift in Sources */,
 				8811956E24F086BA000CEF7B /* FriendsViewController.swift in Sources */,
 				8811956C24F086BA000CEF7B /* Friend.swift in Sources */,
+				8811958424F0D727000CEF7B /* AddVisitViewController.swift in Sources */,
 				8811957324F08797000CEF7B /* Common.swift in Sources */,
+				8811958824F0DF78000CEF7B /* MapSearchTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

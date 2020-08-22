@@ -41,27 +41,21 @@ class VisitsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(newLocationAdded(_:)), name: .newLocationSaved, object: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return LocationsStorage.shared.locations.count
+      return 20
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "VisitCell", for: indexPath) as! VisitCell
-      let location = LocationsStorage.shared.locations[indexPath.row]
-        cell.locationLabel.text = location.description
-      cell.dateLabel?.text = location.dateString
+        cell.locationLabel.text = "Location"
+      cell.dateLabel?.text = "Date"
       return cell
     }
     
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
       navigationController?.navigationBar.tintColor = .white
-    }
-    
-    @objc func newLocationAdded(_ notification: Notification) {
-      tableView.reloadData()
     }
 }
