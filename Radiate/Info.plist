@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Radiate uses your location to trace visits.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Radiate uses your location to trace visits.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Radiate uses your contacts for tracing.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

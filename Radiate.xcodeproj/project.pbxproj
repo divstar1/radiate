@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		8811953524F0862D000CEF7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811953424F0862D000CEF7B /* AppDelegate.swift */; };
 		8811953724F0862D000CEF7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811953624F0862D000CEF7B /* SceneDelegate.swift */; };
-		8811953924F0862D000CEF7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811953824F0862D000CEF7B /* ViewController.swift */; };
 		8811953C24F0862D000CEF7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8811953A24F0862D000CEF7B /* Main.storyboard */; };
 		8811953E24F0862E000CEF7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8811953D24F0862E000CEF7B /* Assets.xcassets */; };
 		8811954124F0862E000CEF7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8811953F24F0862E000CEF7B /* LaunchScreen.storyboard */; };
 		8811954C24F0862F000CEF7B /* RadiateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811954B24F0862F000CEF7B /* RadiateTests.swift */; };
 		8811955724F0862F000CEF7B /* RadiateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811955624F0862F000CEF7B /* RadiateUITests.swift */; };
+		8811956C24F086BA000CEF7B /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811956524F086BA000CEF7B /* Friend.swift */; };
+		8811956E24F086BA000CEF7B /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811956724F086BA000CEF7B /* FriendsViewController.swift */; };
+		8811956F24F086BA000CEF7B /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811956824F086BA000CEF7B /* FriendCell.swift */; };
+		8811957324F08797000CEF7B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957224F08797000CEF7B /* Common.swift */; };
+		8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957424F08819000CEF7B /* SignUpViewController.swift */; };
+		8811957724F0AEF4000CEF7B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957624F0AEF4000CEF7B /* MessageViewController.swift */; };
+		8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957824F0C02C000CEF7B /* VisitCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,6 @@
 		8811953124F0862D000CEF7B /* Radiate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radiate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8811953424F0862D000CEF7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8811953624F0862D000CEF7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8811953824F0862D000CEF7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8811953B24F0862D000CEF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8811953D24F0862E000CEF7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8811954024F0862E000CEF7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		8811955224F0862F000CEF7B /* RadiateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadiateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8811955624F0862F000CEF7B /* RadiateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiateUITests.swift; sourceTree = "<group>"; };
 		8811955824F0862F000CEF7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8811956524F086BA000CEF7B /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		8811956724F086BA000CEF7B /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		8811956824F086BA000CEF7B /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		8811957224F08797000CEF7B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		8811957424F08819000CEF7B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8811957624F0AEF4000CEF7B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		8811957824F0C02C000CEF7B /* VisitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,19 @@
 		8811953324F0862D000CEF7B /* Radiate */ = {
 			isa = PBXGroup;
 			children = (
+				8811956524F086BA000CEF7B /* Friend.swift */,
+				8811956824F086BA000CEF7B /* FriendCell.swift */,
+				8811957824F0C02C000CEF7B /* VisitCell.swift */,
+				8811956724F086BA000CEF7B /* FriendsViewController.swift */,
 				8811953424F0862D000CEF7B /* AppDelegate.swift */,
 				8811953624F0862D000CEF7B /* SceneDelegate.swift */,
-				8811953824F0862D000CEF7B /* ViewController.swift */,
 				8811953A24F0862D000CEF7B /* Main.storyboard */,
+				8811957624F0AEF4000CEF7B /* MessageViewController.swift */,
+				8811957424F08819000CEF7B /* SignUpViewController.swift */,
 				8811953D24F0862E000CEF7B /* Assets.xcassets */,
 				8811953F24F0862E000CEF7B /* LaunchScreen.storyboard */,
 				8811954224F0862E000CEF7B /* Info.plist */,
+				8811957224F08797000CEF7B /* Common.swift */,
 			);
 			path = Radiate;
 			sourceTree = "<group>";
@@ -259,9 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8811953924F0862D000CEF7B /* ViewController.swift in Sources */,
+				8811956F24F086BA000CEF7B /* FriendCell.swift in Sources */,
 				8811953524F0862D000CEF7B /* AppDelegate.swift in Sources */,
+				8811957724F0AEF4000CEF7B /* MessageViewController.swift in Sources */,
+				8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */,
+				8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */,
 				8811953724F0862D000CEF7B /* SceneDelegate.swift in Sources */,
+				8811956E24F086BA000CEF7B /* FriendsViewController.swift in Sources */,
+				8811956C24F086BA000CEF7B /* Friend.swift in Sources */,
+				8811957324F08797000CEF7B /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 294WP28D94;
 				INFOPLIST_FILE = Radiate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 294WP28D94;
 				INFOPLIST_FILE = Radiate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
