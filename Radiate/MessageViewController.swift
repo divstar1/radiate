@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import ContactsUI
 
-class MessageViewController: UIViewController, UITextViewDelegate {
+class MessageViewController: UIViewController, UITextViewDelegate, CNContactPickerDelegate {
     @IBOutlet weak var messageTextView: UITextView!
     
     override func viewDidLoad() {
@@ -20,4 +21,17 @@ class MessageViewController: UIViewController, UITextViewDelegate {
         view.endEditing(true)
         super.touchesBegan(touches, with: event)
     }
+    
+    func contactsSelected(contacts: [CNContact]) {
+        
+    }
+    
+    @IBAction func selectContactsClicked() {
+        let contactsNavController = storyboard?.instantiateViewController(withIdentifier: "contactsNavController") as! UINavigationController
+        let recentContactsController = contactsNavController.viewControllers.first as! RecentContactsTableViewController
+        recentContactsController.contactsSelectedCallback = contactsSelected(contacts:)
+
+        present(contactsNavController, animated: true, completion: nil)
+    }
+    
 }

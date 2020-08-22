@@ -49,7 +49,6 @@ class VisitsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        self.visits = userVisits
       let cell = tableView.dequeueReusableCell(withIdentifier: "VisitCell", for: indexPath) as! VisitCell
         if let visits = visits {
             let currentVisit = visits[indexPath.item]
@@ -69,7 +68,10 @@ class VisitsViewController: UITableViewController {
     }
     
     func reloadData() {
-        tableView.reloadData()
+        self.visits = userVisits
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func createVisitClicked(_ sender: UIBarButtonItem) {

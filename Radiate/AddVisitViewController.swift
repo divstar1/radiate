@@ -51,7 +51,6 @@ class AddVisitViewController: UIViewController, UITextFieldDelegate, CNContactPi
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("textFieldDidBeginEditing was called")
         if textField == locationTextField {
             handleMap()
         } else if textField == contactsTextField {

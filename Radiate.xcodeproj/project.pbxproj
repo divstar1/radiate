@@ -26,6 +26,7 @@
 		8811958424F0D727000CEF7B /* AddVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958324F0D727000CEF7B /* AddVisitViewController.swift */; };
 		8811958624F0DC67000CEF7B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958524F0DC67000CEF7B /* MapViewController.swift */; };
 		8811958824F0DF78000CEF7B /* MapSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */; };
+		8861CA2D24F1B2D90025C576 /* RecentContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861CA2C24F1B2D90025C576 /* RecentContactsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		8811958324F0D727000CEF7B /* AddVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVisitViewController.swift; sourceTree = "<group>"; };
 		8811958524F0DC67000CEF7B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewController.swift; sourceTree = "<group>"; };
+		8861CA2C24F1B2D90025C576 /* RecentContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				8811957C24F0C46E000CEF7B /* VisitsViewController.swift */,
 				8811953624F0862D000CEF7B /* SceneDelegate.swift */,
 				8811953A24F0862D000CEF7B /* Main.storyboard */,
+				8861CA2C24F1B2D90025C576 /* RecentContactsTableViewController.swift */,
 				8811958324F0D727000CEF7B /* AddVisitViewController.swift */,
 				8811957624F0AEF4000CEF7B /* MessageViewController.swift */,
 				8811957424F08819000CEF7B /* SignUpViewController.swift */,
@@ -298,6 +301,7 @@
 				8811957B24F0C1A0000CEF7B /* Visit.swift in Sources */,
 				8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */,
 				8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */,
+				8861CA2D24F1B2D90025C576 /* RecentContactsTableViewController.swift in Sources */,
 				8811958624F0DC67000CEF7B /* MapViewController.swift in Sources */,
 				8811957D24F0C46E000CEF7B /* VisitsViewController.swift in Sources */,
 				8811953724F0862D000CEF7B /* SceneDelegate.swift in Sources */,
