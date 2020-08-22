@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w9R-mU-zAa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XaH-cY-2RX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -153,7 +153,7 @@
         <!--Friends View Controller-->
         <scene sceneID="Ijh-Qe-7kO">
             <objects>
-                <tableViewController id="P5b-9G-ULg" userLabel="Friends View Controller" customClass="FriendsViewController" customModule="RWConnect" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="P5b-9G-ULg" userLabel="Friends View Controller" customClass="FriendsViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="22" sectionFooterHeight="22" id="hkW-Oq-L5z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +164,7 @@
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="72" id="w2q-R7-rM2" customClass="FriendCell" customModule="RWConnect" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="72" id="w2q-R7-rM2" customClass="FriendCell" customModule="Radiate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w2q-R7-rM2" id="V2o-3k-1Tn">
@@ -618,10 +618,7 @@
                         <barButtonItem key="rightBarButtonItem" image="AddButton" id="75z-w0-N0W">
                             <color key="tintColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="addFriendsWithSender:" destination="P5b-9G-ULg" id="yBk-hS-v84"/>
-                                <segue destination="w9R-mU-zAa" kind="popoverPresentation" popoverAnchorBarButtonItem="75z-w0-N0W" id="dO4-Jh-b0t">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <action selector="createVisitClicked:" destination="e7I-dm-t7s" id="Bs6-Az-SaI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -634,19 +631,19 @@
         <!--Add Visit View Controller-->
         <scene sceneID="ZoT-V4-cdX">
             <objects>
-                <viewController id="w9R-mU-zAa" customClass="AddVisitViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addVisitController" id="w9R-mU-zAa" customClass="AddVisitViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bAk-bZ-LjZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sD4-Wd-rL8">
-                                <rect key="frame" x="20" y="39" width="98.5" height="29"/>
+                                <rect key="frame" x="20" y="83" width="98.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-K5-xXf">
-                                <rect key="frame" x="20" y="634" width="374" height="40"/>
+                                <rect key="frame" x="20" y="678" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rO0-V5-gEv"/>
@@ -662,11 +659,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="addVisitClicked" destination="w9R-mU-zAa" eventType="touchUpInside" id="yL6-Nh-Wrl"/>
                                     <action selector="didClickSignUpButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="jbv-Wh-elk"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BxZ-OL-Mo0">
-                                <rect key="frame" x="20" y="108" width="374" height="486"/>
+                                <rect key="frame" x="20" y="152" width="374" height="486"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yVR-1q-C0R">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -725,9 +723,6 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="name"/>
-                                                        <connections>
-                                                            <action selector="didSelectContactsTextField" destination="w9R-mU-zAa" eventType="touchUpInside" id="fWa-rd-huU"/>
-                                                        </connections>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd1-2g-T0u">
                                                         <rect key="frame" x="0.0" y="25" width="374" height="1"/>
@@ -756,7 +751,7 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-5Y-Hvm">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-5Y-Hvm">
                                                 <rect key="frame" x="0.0" y="50" width="320" height="216"/>
                                             </datePicker>
                                         </subviews>
@@ -784,6 +779,7 @@
                     <navigationItem key="navigationItem" id="upG-iw-QvN"/>
                     <connections>
                         <outlet property="contactsTextField" destination="oe1-8R-2dQ" id="1ri-EX-n0D"/>
+                        <outlet property="datePicker" destination="Vk9-5Y-Hvm" id="7fF-4j-qxn"/>
                         <outlet property="locationTextField" destination="LPM-ZB-27C" id="jfr-53-H4P"/>
                     </connections>
                 </viewController>
@@ -794,7 +790,6 @@
         <!--Map View Controller-->
         <scene sceneID="I7Z-ds-efK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ydd-4o-ZxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="mapView" id="ywo-0K-rtO" customClass="MapViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ost-OS-dHd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -831,6 +826,7 @@
                         <outlet property="mapView" destination="JPQ-qx-aqg" id="ntj-Mu-nLR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydd-4o-ZxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5905.7971014492759" y="1476.5625"/>
         </scene>

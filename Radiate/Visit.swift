@@ -7,23 +7,18 @@
 //
 
 import Foundation
+import UIKit
+import ContactsUI
+import MapKit
 
 class Visit {
-    let date: String
-    let location: String
-    let contacts: [String]
+    let date: Date
+    let location: MKPlacemark
+    let contacts: [CNContact]
     
-    init(date: String, location: String, contacts: [String]) {
+    init(date: Date, location: MKPlacemark, contacts: [CNContact]) {
         self.date = date
         self.location = location
         self.contacts = contacts
-    }
-}
-
-extension Visit: Equatable {
-    static func ==(lhs: Visit, rhs: Visit) -> Bool{
-      return lhs.date == rhs.date &&
-        lhs.location == rhs.location &&
-        lhs.contacts == rhs.contacts
     }
 }

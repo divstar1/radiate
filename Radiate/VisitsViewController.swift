@@ -37,21 +37,46 @@
 import Foundation
 import UIKit
 
+typealias VisitCreatedCallback = () -> Void
+
 class VisitsViewController: UITableViewController {
+    
+    var visits:[Visit]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 20
+        self.visits = userVisits
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.visits = userVisits
       let cell = tableView.dequeueReusableCell(withIdentifier: "VisitCell", for: indexPath) as! VisitCell
-        cell.locationLabel.text = "Location"
-      cell.dateLabel?.text = "Date"
+        if let visits = visits {
+            let currentVisit = visits[indexPath.item]
+            cell.contactsLabel.text = getContactsString(contacts: currentVisit.contacts)
+            cell.locationLabel.text = getLocationString(location: currentVisit.location)
+            cell.dateLabel.text = getDateString(date: currentVisit.date)
+        }
       return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let visits = visits {
+            return visits.count
+        } else {
+            return 0
+        }
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
+    
+    @IBAction func createVisitClicked(_ sender: UIBarButtonItem) {
+        let addVisitController = storyboard?.instantiateViewController(withIdentifier: "addVisitController") as! AddVisitViewController
+        addVisitController.visitCreatedCallback = reloadData
+        
+        present(addVisitController, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

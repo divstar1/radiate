@@ -38,7 +38,6 @@ import UIKit
 import ContactsUI
 
 class FriendsViewController: UITableViewController {
- // var friendsList = Friend.defaultContacts()
   var friendsList=[Friend]()
   
   override func viewDidLoad() {
