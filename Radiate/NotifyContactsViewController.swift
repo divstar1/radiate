@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 
 class NotifyContactsViewController: UIViewController {
+    
+    @IBAction func userTestedPositiveClicked() {
+        userTestedPositive = true
+    }
+    
+    @IBAction func usersContactTestedPositiveClicked() {
+        userTestedPositive = false
+    }
+    
     override func viewDidLoad() {
         
     }

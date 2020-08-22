@@ -11,12 +11,33 @@ import UIKit
 import MapKit
 import ContactsUI
 
-let RADIATE_BLUE = UIColor(red: 0.74, green: 0.89, blue: 0.97, alpha: 1.00)
+let RADIATE_BLUE = UIColor(red: 0.34, green: 0.54, blue: 1.00, alpha: 1.00)
 
 typealias LocationSelectedCallback = (MKPlacemark) -> Void
 typealias ContactsSelectedCallback = ([CNContact]) -> Void
 
 var userVisits = [Visit]()
+var userTestedPositive = false
+
+func getTextMessageBody(for diagnosisDate: Date?) -> String {
+    if (userTestedPositive) {
+        return getUserTestedPositiveMessage(for: diagnosisDate)
+    } else {
+        return getUserContactTestedPositiveMessage()
+    }
+}
+
+func getUserTestedPositiveMessage(for diagnosisDate: Date?) -> String {
+    if let diagnosisDate = diagnosisDate {
+        return "Hello, I'm writing to let you know that I have recently tested positive for COVID-19 on \(getDateString(date: diagnosisDate)). Because you and I been in contact within the past two weeks, please take precautions and self-isolate."
+    } else {
+        return "Hello, I'm writing to let you know that I have recently tested positive for COVID-19. Because you and I been in contact within the past two weeks, please take precautions and self-isolate."
+    }
+}
+
+func getUserContactTestedPositiveMessage() -> String {
+    return "Hello, I'm writing to let you know that someone I was in contact with recently tested positive for COVID-19. Because you and I met recently, please take precautions and continue to stay safe."
+}
 
 func getRecentContacts() -> [CNContact] {
     let recentVisits = getRecentVisits()

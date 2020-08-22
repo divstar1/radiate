@@ -85,7 +85,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l99-e0-MRH">
                                         <rect key="frame" x="0.0" y="223" width="374" height="40"/>
-                                        <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.33725490196078434" green="0.54117647058823526" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kft-6k-vCC"/>
                                         </constraints>
@@ -270,7 +270,7 @@
         <!--Notify My Contacts-->
         <scene sceneID="Xac-rC-zgG">
             <objects>
-                <viewController id="G4t-aQ-uGG" sceneMemberID="viewController">
+                <viewController id="G4t-aQ-uGG" customClass="NotifyContactsViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uNH-c2-gr2"/>
                         <viewControllerLayoutGuide type="bottom" id="h3l-Mv-f47"/>
@@ -299,6 +299,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="userTestedPositiveClicked" destination="G4t-aQ-uGG" eventType="touchUpInside" id="Sas-yN-x7l"/>
                                             <segue destination="K7B-0v-crK" kind="show" id="JoI-f0-htp"/>
                                         </connections>
                                     </button>
@@ -319,6 +320,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="usersContactTestedPositiveClicked" destination="G4t-aQ-uGG" eventType="touchUpInside" id="E3M-Pi-idV"/>
                                             <segue destination="K7B-0v-crK" kind="show" id="2Yd-Wb-Kck"/>
                                         </connections>
                                     </button>
@@ -419,6 +421,9 @@
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nei-Zd-DmJ">
                                                 <rect key="frame" x="0.0" y="50" width="320" height="216"/>
+                                                <connections>
+                                                    <action selector="diagnosisDateChanged:" destination="K7B-0v-crK" eventType="valueChanged" id="hLf-uo-4PZ"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                     </stackView>
@@ -427,40 +432,68 @@
                                     <constraint firstItem="YrR-Rv-1la" firstAttribute="width" secondItem="9E5-zQ-5JM" secondAttribute="width" id="k6X-h3-56k"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vl1-BS-B34">
-                                <rect key="frame" x="20.5" y="724" width="373" height="40"/>
-                                <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="WiE-pm-rbm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Select contacts">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="selectContactsClicked" destination="K7B-0v-crK" eventType="touchUpInside" id="4bI-0I-VJ2"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LDH-Af-zhO">
+                                <rect key="frame" x="20.5" y="677" width="373" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vl1-BS-B34">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="40"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="WiE-pm-rbm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Select contacts">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectContactsClicked" destination="K7B-0v-crK" eventType="touchUpInside" id="4bI-0I-VJ2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9M-hP-mz0">
+                                        <rect key="frame" x="0.0" y="60" width="373" height="40"/>
+                                        <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FOk-PS-gFB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Notify">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="notifyContacts" destination="K7B-0v-crK" eventType="touchUpInside" id="n4R-10-kI3"/>
+                                            <action selector="selectContactsClicked" destination="K7B-0v-crK" eventType="touchUpInside" id="9gt-tR-ETX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lwc-tg-k3F" firstAttribute="bottom" secondItem="vl1-BS-B34" secondAttribute="bottom" constant="49" id="LcN-eQ-Fz7"/>
-                            <constraint firstItem="vl1-BS-B34" firstAttribute="centerX" secondItem="Lwc-tg-k3F" secondAttribute="centerX" id="WDp-at-6Ek"/>
-                            <constraint firstItem="vl1-BS-B34" firstAttribute="width" secondItem="9E5-zQ-5JM" secondAttribute="width" id="aOL-60-i1k"/>
+                            <constraint firstItem="i9M-hP-mz0" firstAttribute="width" secondItem="9E5-zQ-5JM" secondAttribute="width" id="LA3-o8-fP2"/>
                             <constraint firstItem="9E5-zQ-5JM" firstAttribute="centerX" secondItem="Lwc-tg-k3F" secondAttribute="centerX" id="bGg-eb-siV"/>
+                            <constraint firstItem="vl1-BS-B34" firstAttribute="width" secondItem="9E5-zQ-5JM" secondAttribute="width" id="qPA-jy-Sbd"/>
                             <constraint firstItem="9E5-zQ-5JM" firstAttribute="width" secondItem="ggo-Lb-oU1" secondAttribute="width" multiplier="0.9" id="qzs-Cj-nyY"/>
+                            <constraint firstItem="LDH-Af-zhO" firstAttribute="centerX" secondItem="Lwc-tg-k3F" secondAttribute="centerX" id="rUZ-De-LJ8"/>
                             <constraint firstItem="9E5-zQ-5JM" firstAttribute="top" secondItem="Lwc-tg-k3F" secondAttribute="top" constant="20" id="xGg-3e-Vtf"/>
+                            <constraint firstItem="Lwc-tg-k3F" firstAttribute="bottom" secondItem="LDH-Af-zhO" secondAttribute="bottom" constant="36" id="zZx-Nz-V9C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lwc-tg-k3F"/>
                     </view>
                     <navigationItem key="navigationItem" title="Write A Message" id="nWN-41-O8g"/>
                     <connections>
+                        <outlet property="diagnosisDatePicker" destination="Nei-Zd-DmJ" id="0d1-JV-1Dv"/>
                         <outlet property="messageTextView" destination="6YK-R8-zcJ" id="GES-ug-AnZ"/>
                     </connections>
                 </viewController>
@@ -911,15 +944,15 @@
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="72" id="ZLq-ve-zL0" customClass="FriendCell" customModule="Radiate" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="72" id="ZLq-ve-zL0" customClass="FriendCell" customModule="Radiate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZLq-ve-zL0" id="cnq-gF-X3Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="370" height="72"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pLA-ha-h25">
-                                            <rect key="frame" x="20" y="11" width="342" height="50"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="50"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="DJG-eH-KVM">
                                                     <rect key="frame" x="0.0" y="3" width="44" height="44"/>
@@ -929,10 +962,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pC9-6e-2s4">
-                                                    <rect key="frame" x="52" y="4" width="290" height="42"/>
+                                                    <rect key="frame" x="52" y="4" width="322" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="ContactName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtm-A3-2ZL">
-                                                            <rect key="frame" x="0.0" y="0.0" width="290" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="322" height="19.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19.333333333333332" id="VUR-MZ-d10"/>
                                                             </constraints>
@@ -941,7 +974,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" horizontalCompressionResistancePriority="749" text="123-456-7890" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltQ-Ok-zur">
-                                                            <rect key="frame" x="0.0" y="19.5" width="290" height="22.5"/>
+                                                            <rect key="frame" x="0.0" y="19.5" width="322" height="22.5"/>
                                                             <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
