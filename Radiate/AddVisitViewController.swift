@@ -8,12 +8,9 @@
 
 import Foundation
 import UIKit
+import MapKit
 
-protocol LocationSelectHandler {
-    func didSelectLocation(location:String)
-}
-
-class AddVisitViewController: UIViewController, UITextFieldDelegate, LocationSelectHandler {
+class AddVisitViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var contactsTextField: UITextField!
@@ -22,14 +19,14 @@ class AddVisitViewController: UIViewController, UITextFieldDelegate, LocationSel
         locationTextField.delegate = self
     }
     
-    func didSelectLocation(location: String) {
-        locationTextField.text = location
+    func didSelectLocation(placemark: MKPlacemark) {
+        locationTextField.text = "\(placemark.name ?? "Unknown place") at \(placemark.title ?? "Unknown address")"
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         let mapNavController = storyboard?.instantiateViewController(withIdentifier: "mapNavController") as! UINavigationController
         let mapView = mapNavController.viewControllers.first as! MapViewController
-        mapView.locationSearchHandlerDelegate = self
+        mapView.locationSelectedCallback = didSelectLocation(placemark:)
         
         present(mapNavController, animated: true, completion: nil)
     }

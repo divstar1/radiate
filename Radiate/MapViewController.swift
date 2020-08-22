@@ -10,17 +10,13 @@ import Foundation
 import UIKit
 import MapKit
 
-protocol MapSearchHandler {
-    func didSelectLocation(placemark:MKPlacemark)
-}
-
-class MapViewController: UIViewController, CLLocationManagerDelegate, MapSearchHandler {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var locationSearchController:UISearchController? = nil
     var selectedLocation:MKPlacemark? = nil
-    var locationSearchHandlerDelegate:LocationSelectHandler? = nil
-
+    var locationSelectedCallback: LocationSelectedCallback? = nil
+    
     override func viewDidLoad() {
         setUpLocationManager()
         setUpLocationSearchController()
@@ -29,19 +25,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MapSearchH
     func didSelectLocation(placemark:MKPlacemark) {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
-               mapView.setRegion(region, animated: true)
-        
-        locationSearchHandlerDelegate?.didSelectLocation(location: "\(placemark.name ?? "Unknown place") at \(placemark.title ?? "Unknown address")")
+        mapView.setRegion(region, animated: true)
+        selectedLocation = placemark
     }
     
     @IBAction func saveLocation() {
+        if let locationSelectedCallback = locationSelectedCallback,
+            let selectedLocation = selectedLocation {
+            locationSelectedCallback(selectedLocation)
+        }
         dismiss(animated: true, completion: nil)
     }
     
     func setUpLocationSearchController() {
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "MapSearchTableVC") as! MapSearchTableViewController
         locationSearchTable.mapView = mapView
-        locationSearchTable.mapSearchHandlerDelegate = self
+        locationSearchTable.locationSelectedCallback = didSelectLocation(placemark:)
         locationSearchController = UISearchController(searchResultsController: locationSearchTable)
         locationSearchController?.searchResultsUpdater = locationSearchTable
         setUpSearchBar()

@@ -8,5 +8,9 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 let RADIATE_BLUE = UIColor(red: 0.74, green: 0.89, blue: 0.97, alpha: 1.00)
+
+typealias LocationSelectedCallback = (MKPlacemark) -> Void
+

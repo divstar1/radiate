@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 import MapKit
 
-
 class MapSearchTableViewController: UITableViewController, UISearchResultsUpdating {
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
-    var mapSearchHandlerDelegate:MapSearchHandler? = nil
-
+    var locationSelectedCallback: LocationSelectedCallback? = nil
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedItem = matchingItems[indexPath.row].placemark
-        mapSearchHandlerDelegate?.didSelectLocation(placemark: selectedItem)
+        if let locationSelectedCallback = locationSelectedCallback {
+            locationSelectedCallback(matchingItems[indexPath.row].placemark)
+        }
         dismiss(animated: true, completion: nil)
     }
     
