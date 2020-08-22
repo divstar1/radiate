@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2018 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,57 +34,34 @@
 //  Copyright © 2020 TeamRadiate. All rights reserved.
 //
 
+import Foundation
 import UIKit
-import Contacts
 
-class Friend {
-  let firstName: String
-  let lastName: String
-  var identifier: String?
-  let profilePicture: UIImage?
-  var storedContact: CNMutableContact?
-  var phoneNumberField: (CNLabeledValue<CNPhoneNumber>)?
-  
-  init(firstName: String, lastName: String, profilePicture: UIImage?){
-    self.firstName = firstName
-    self.lastName = lastName
-    self.profilePicture = profilePicture
-  }
-}
-
-extension Friend: Equatable {
-  static func ==(lhs: Friend, rhs: Friend) -> Bool{
-    return lhs.firstName == rhs.firstName &&
-      lhs.lastName == rhs.lastName &&
-      lhs.profilePicture == rhs.profilePicture
-  }
-}
-
-extension Friend {
-  var contactValue: CNContact {
-    let contact = CNMutableContact()
-    contact.givenName = firstName
-    contact.familyName = lastName
-    if let profilePicture = profilePicture {
-      let imageData = profilePicture.jpegData(compressionQuality: 1)
-      contact.imageData = imageData
+class VisitsViewController: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(newLocationAdded(_:)), name: .newLocationSaved, object: nil)
     }
-    if let phoneNumberField = phoneNumberField {
-      contact.phoneNumbers.append(phoneNumberField)
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+      return LocationsStorage.shared.locations.count
     }
-    return contact.copy() as! CNContact
-  }
-  
-  convenience init?(contact: CNContact) {
-    let firstName = contact.givenName
-    let lastName = contact.familyName
-    var profilePicture: UIImage?
-    if let imageData = contact.imageData {
-      profilePicture = UIImage(data: imageData)
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+      let cell = tableView.dequeueReusableCell(withIdentifier: "VisitCell", for: indexPath) as! VisitCell
+      let location = LocationsStorage.shared.locations[indexPath.row]
+        cell.locationLabel.text = location.description
+      cell.dateLabel?.text = location.dateString
+      return cell
     }
-    self.init(firstName: firstName, lastName: lastName, profilePicture: profilePicture)
-    if let contactPhone = contact.phoneNumbers.first {
-      phoneNumberField = contactPhone
+    
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      navigationController?.navigationBar.tintColor = .white
     }
-  }
+    
+    @objc func newLocationAdded(_ notification: Notification) {
+      tableView.reloadData()
+    }
 }

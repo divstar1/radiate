@@ -11,4 +11,18 @@ import UIKit
 
 class VisitCell: UITableViewCell {
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var contactsLabel: UILabel!
+    
+    var visit : Visit? {
+        didSet {
+            configureCell()
+        }
+    }
+    
+    private func configureCell() {
+        
+    }
+    
 }

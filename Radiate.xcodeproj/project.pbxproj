@@ -21,6 +21,10 @@
 		8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957424F08819000CEF7B /* SignUpViewController.swift */; };
 		8811957724F0AEF4000CEF7B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957624F0AEF4000CEF7B /* MessageViewController.swift */; };
 		8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957824F0C02C000CEF7B /* VisitCell.swift */; };
+		8811957B24F0C1A0000CEF7B /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957A24F0C1A0000CEF7B /* Visit.swift */; };
+		8811957D24F0C46E000CEF7B /* VisitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957C24F0C46E000CEF7B /* VisitsViewController.swift */; };
+		8811957F24F0C55D000CEF7B /* LocationsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811957E24F0C55D000CEF7B /* LocationsStorage.swift */; };
+		8811958124F0C575000CEF7B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958024F0C575000CEF7B /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,11 @@
 		8811957424F08819000CEF7B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8811957624F0AEF4000CEF7B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		8811957824F0C02C000CEF7B /* VisitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitCell.swift; sourceTree = "<group>"; };
+		8811957A24F0C1A0000CEF7B /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		8811957C24F0C46E000CEF7B /* VisitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsViewController.swift; sourceTree = "<group>"; };
+		8811957E24F0C55D000CEF7B /* LocationsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStorage.swift; sourceTree = "<group>"; };
+		8811958024F0C575000CEF7B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8811958224F0CE4E000CEF7B /* Route.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Route.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +100,7 @@
 		8811952824F0862D000CEF7B = {
 			isa = PBXGroup;
 			children = (
+				8811958224F0CE4E000CEF7B /* Route.gpx */,
 				8811953324F0862D000CEF7B /* Radiate */,
 				8811954A24F0862F000CEF7B /* RadiateTests */,
 				8811955524F0862F000CEF7B /* RadiateUITests */,
@@ -114,8 +124,10 @@
 				8811956524F086BA000CEF7B /* Friend.swift */,
 				8811956824F086BA000CEF7B /* FriendCell.swift */,
 				8811957824F0C02C000CEF7B /* VisitCell.swift */,
+				8811957A24F0C1A0000CEF7B /* Visit.swift */,
 				8811956724F086BA000CEF7B /* FriendsViewController.swift */,
 				8811953424F0862D000CEF7B /* AppDelegate.swift */,
+				8811957C24F0C46E000CEF7B /* VisitsViewController.swift */,
 				8811953624F0862D000CEF7B /* SceneDelegate.swift */,
 				8811953A24F0862D000CEF7B /* Main.storyboard */,
 				8811957624F0AEF4000CEF7B /* MessageViewController.swift */,
@@ -124,6 +136,8 @@
 				8811953F24F0862E000CEF7B /* LaunchScreen.storyboard */,
 				8811954224F0862E000CEF7B /* Info.plist */,
 				8811957224F08797000CEF7B /* Common.swift */,
+				8811957E24F0C55D000CEF7B /* LocationsStorage.swift */,
+				8811958024F0C575000CEF7B /* Location.swift */,
 			);
 			path = Radiate;
 			sourceTree = "<group>";
@@ -280,8 +294,12 @@
 				8811956F24F086BA000CEF7B /* FriendCell.swift in Sources */,
 				8811953524F0862D000CEF7B /* AppDelegate.swift in Sources */,
 				8811957724F0AEF4000CEF7B /* MessageViewController.swift in Sources */,
+				8811957B24F0C1A0000CEF7B /* Visit.swift in Sources */,
 				8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */,
 				8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */,
+				8811958124F0C575000CEF7B /* Location.swift in Sources */,
+				8811957F24F0C55D000CEF7B /* LocationsStorage.swift in Sources */,
+				8811957D24F0C46E000CEF7B /* VisitsViewController.swift in Sources */,
 				8811953724F0862D000CEF7B /* SceneDelegate.swift in Sources */,
 				8811956E24F086BA000CEF7B /* FriendsViewController.swift in Sources */,
 				8811956C24F086BA000CEF7B /* Friend.swift in Sources */,

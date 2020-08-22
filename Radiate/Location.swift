@@ -1,4 +1,4 @@
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2018 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -34,57 +34,28 @@
 //  Copyright © 2020 TeamRadiate. All rights reserved.
 //
 
-import UIKit
-import Contacts
+import Foundation
+import CoreLocation
 
-class Friend {
-  let firstName: String
-  let lastName: String
-  var identifier: String?
-  let profilePicture: UIImage?
-  var storedContact: CNMutableContact?
-  var phoneNumberField: (CNLabeledValue<CNPhoneNumber>)?
+class Location: Codable {
+  static let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .medium
+    return formatter
+  }()
   
-  init(firstName: String, lastName: String, profilePicture: UIImage?){
-    self.firstName = firstName
-    self.lastName = lastName
-    self.profilePicture = profilePicture
-  }
-}
-
-extension Friend: Equatable {
-  static func ==(lhs: Friend, rhs: Friend) -> Bool{
-    return lhs.firstName == rhs.firstName &&
-      lhs.lastName == rhs.lastName &&
-      lhs.profilePicture == rhs.profilePicture
-  }
-}
-
-extension Friend {
-  var contactValue: CNContact {
-    let contact = CNMutableContact()
-    contact.givenName = firstName
-    contact.familyName = lastName
-    if let profilePicture = profilePicture {
-      let imageData = profilePicture.jpegData(compressionQuality: 1)
-      contact.imageData = imageData
-    }
-    if let phoneNumberField = phoneNumberField {
-      contact.phoneNumbers.append(phoneNumberField)
-    }
-    return contact.copy() as! CNContact
+  let date: Date
+  let dateString: String
+  let description: String
+  
+  init(date: Date, descriptionString: String) {
+    self.date = date
+    dateString = Location.dateFormatter.string(from: date)
+    description = descriptionString
   }
   
-  convenience init?(contact: CNContact) {
-    let firstName = contact.givenName
-    let lastName = contact.familyName
-    var profilePicture: UIImage?
-    if let imageData = contact.imageData {
-      profilePicture = UIImage(data: imageData)
-    }
-    self.init(firstName: firstName, lastName: lastName, profilePicture: profilePicture)
-    if let contactPhone = contact.phoneNumbers.first {
-      phoneNumberField = contactPhone
-    }
+  convenience init(visit: CLVisit, descriptionString: String) {
+    self.init(date: visit.arrivalDate, descriptionString: descriptionString)
   }
 }

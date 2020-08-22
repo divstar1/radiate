@@ -26,6 +26,14 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+//
+//  VisitsViewController.swift
+//  Radiate
+//
+//  Created by dkarivarad on 8/21/20.
+//  Copyright © 2020 TeamRadiate. All rights reserved.
+//
+
 import UIKit
 import Contacts
 
