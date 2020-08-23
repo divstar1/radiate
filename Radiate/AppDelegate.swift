@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setUpDailyNotifications() {
         var dateComponents = DateComponents()
-        //dateComponents.hour = 24
-        dateComponents.minute = 48
+        dateComponents.hour = 21
+        dateComponents.minute = 0
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
 
         let content = UNMutableNotificationContent()
