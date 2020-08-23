@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8XZ-FP-QAe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eBp-mG-Fix">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,13 +10,13 @@
         <!--Sign Up-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignUpViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpController" id="BYZ-38-t0r" customClass="SignUpViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="eoM-wS-kt3">
-                                <rect key="frame" x="20" y="182" width="374" height="263"/>
+                                <rect key="frame" x="20" y="57" width="374" height="263"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-TP-Cs6">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="183"/>
@@ -85,7 +85,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l99-e0-MRH">
                                         <rect key="frame" x="0.0" y="223" width="374" height="40"/>
-                                        <color key="backgroundColor" red="0.33725490196078434" green="0.54117647058823526" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="kft-6k-vCC"/>
                                         </constraints>
@@ -96,7 +96,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -123,22 +123,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876.81159420289862" y="478.79464285714283"/>
+            <point key="canvasLocation" x="1786.9565217391305" y="478.79464285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kWk-W2-ewR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="10g-ff-zPh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="CcL-XW-auW"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="CcL-XW-auW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ULZ-6i-EUR">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -148,7 +148,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5E6-GC-wA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610.144927536232" y="137.94642857142856"/>
+            <point key="canvasLocation" x="3520.289855072464" y="137.94642857142856"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="Ijh-Qe-7kO">
@@ -232,10 +232,10 @@
                             <outlet property="delegate" destination="P5b-9G-ULg" id="D4F-zt-BTh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Emergency Contacts" id="sgD-4R-hG6">
+                    <navigationItem key="navigationItem" title="Favorite Contacts" id="sgD-4R-hG6">
                         <barButtonItem key="backBarButtonItem" title=" " id="udY-ir-y5g"/>
                         <barButtonItem key="rightBarButtonItem" image="AddButton" id="B7b-ty-7C6">
-                            <color key="tintColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addFriendsWithSender:" destination="P5b-9G-ULg" id="LWK-9r-IVm"/>
                             </connections>
@@ -244,7 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxj-eM-ett" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3422" y="138"/>
+            <point key="canvasLocation" x="4331.884057971015" y="137.94642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vd4-mF-p0O">
@@ -256,16 +256,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="10g-ff-zPh" kind="relationship" relationship="viewControllers" id="XnP-Z1-cUV"/>
-                        <segue destination="e7B-SR-Fue" kind="relationship" relationship="viewControllers" id="Yeg-bo-7qW"/>
-                        <segue destination="XaH-cY-2RX" kind="relationship" relationship="viewControllers" id="QU2-Tc-cxt"/>
+                        <segue destination="XaH-cY-2RX" kind="relationship" relationship="viewControllers" id="kRA-R0-YXB"/>
+                        <segue destination="e7B-SR-Fue" kind="relationship" relationship="viewControllers" id="tjw-hg-TAX"/>
+                        <segue destination="10g-ff-zPh" kind="relationship" relationship="viewControllers" id="Uau-lh-dWj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3w-h1-gPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726.0869565217392" y="478.79464285714283"/>
+            <point key="canvasLocation" x="2636.231884057971" y="478.79464285714283"/>
         </scene>
         <!--Notify My Contacts-->
         <scene sceneID="Xac-rC-zgG">
@@ -284,7 +285,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bm-5W-x4j">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="40"/>
-                                        <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.53725490196078429" green="0.76862745098039209" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ocZ-rx-GUQ"/>
                                         </constraints>
@@ -295,7 +296,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -305,7 +306,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="X5N-ir-V4N">
                                         <rect key="frame" x="0.0" y="104" width="331" height="40"/>
-                                        <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.53725490196078429" green="0.76862745098039209" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zRW-zR-JFx"/>
                                         </constraints>
@@ -316,7 +317,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -368,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SoA-pD-eAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3421.739130434783" y="801.5625"/>
+            <point key="canvasLocation" x="4331.884057971015" y="801.5625"/>
         </scene>
         <!--Write A Message-->
         <scene sceneID="wdN-d4-fBH">
@@ -448,7 +449,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -457,7 +458,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9M-hP-mz0">
                                         <rect key="frame" x="0.0" y="60" width="373" height="40"/>
-                                        <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="FOk-PS-gFB"/>
                                         </constraints>
@@ -468,7 +469,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -493,26 +494,28 @@
                     </view>
                     <navigationItem key="navigationItem" title="Write A Message" id="nWN-41-O8g"/>
                     <connections>
+                        <outlet property="diagnosisDateLabel" destination="Z28-7X-JUv" id="fCz-p7-Y2V"/>
                         <outlet property="diagnosisDatePicker" destination="Nei-Zd-DmJ" id="0d1-JV-1Dv"/>
                         <outlet property="messageTextView" destination="6YK-R8-zcJ" id="GES-ug-AnZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HK-7I-Rrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4186.9565217391309" y="801.5625"/>
+            <point key="canvasLocation" x="5097.1014492753629" y="801.5625"/>
         </scene>
-        <!--Item-->
+        <!--Alert-->
         <scene sceneID="J4p-Z9-yYr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e7B-SR-Fue" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xif-dF-J39"/>
+                    <tabBarItem key="tabBarItem" title="Alert" image="alertIcon" id="xif-dF-J39"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="IhK-d2-ChX">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -522,46 +525,54 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9X-jm-lBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="802"/>
+            <point key="canvasLocation" x="3518.840579710145" y="801.5625"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lA8-Q6-nv6">
+        <!--Gif View Controller-->
+        <scene sceneID="WPu-Sy-MUn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v6X-eW-Mc7" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wq8-Kj-dra">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
+                <viewController id="8tx-Rj-GY4" customClass="GifViewController" customModule="Radiate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7lP-GZ-vWQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="62I-Y4-fPM">
+                                <rect key="frame" x="57" y="351" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0vG-Tw-drD"/>
+                                    <constraint firstAttribute="width" constant="300" id="f4h-Uw-tuc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="62I-Y4-fPM" firstAttribute="centerY" secondItem="RtB-Mx-GiJ" secondAttribute="centerY" id="IZh-Cl-eai"/>
+                            <constraint firstItem="62I-Y4-fPM" firstAttribute="centerX" secondItem="RtB-Mx-GiJ" secondAttribute="centerX" id="Q5t-1r-e2K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RtB-Mx-GiJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gbM-MH-n97"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4KB-P6-0ry"/>
+                        <outlet property="imageView" destination="62I-Y4-fPM" id="IZW-e0-5Ai"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lJq-ts-6St" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cL0-Tj-zhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33.333333333333336" y="478.79464285714283"/>
+            <point key="canvasLocation" x="857" y="479"/>
         </scene>
-        <!--Item-->
+        <!--Daily Log-->
         <scene sceneID="Gpy-KU-hOg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XaH-cY-2RX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wsG-Q1-N4t"/>
+                    <tabBarItem key="tabBarItem" title="Daily Log" image="logIcon" id="wsG-Q1-N4t"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="atu-os-Jbv">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -571,7 +582,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaH-Bc-gEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="1476"/>
+            <point key="canvasLocation" x="2635" y="1477"/>
         </scene>
         <!--Visits-->
         <scene sceneID="ZEA-9F-7U1">
@@ -652,7 +663,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Visits" id="P8T-hI-NaE">
                         <barButtonItem key="rightBarButtonItem" image="AddButton" id="75z-w0-N0W">
-                            <color key="tintColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="createVisitClicked:" destination="e7I-dm-t7s" id="Bs6-Az-SaI"/>
                             </connections>
@@ -662,7 +673,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5W-Jm-2hh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3435" y="1477"/>
+            <point key="canvasLocation" x="3519" y="1477"/>
         </scene>
         <!--Add Visit View Controller-->
         <scene sceneID="ZoT-V4-cdX">
@@ -675,12 +686,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Visit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sD4-Wd-rL8">
                                 <rect key="frame" x="20" y="83" width="98.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFD-K5-xXf">
                                 <rect key="frame" x="20" y="678" width="374" height="40"/>
-                                <color key="backgroundColor" red="0.33719510159999999" green="0.53941323480000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rO0-V5-gEv"/>
                                 </constraints>
@@ -691,7 +702,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -821,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGS-cn-xda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4185" y="1476"/>
+            <point key="canvasLocation" x="4332" y="1477"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="I7Z-ds-efK">
@@ -864,7 +875,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydd-4o-ZxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5905.7971014492759" y="1476.5625"/>
+            <point key="canvasLocation" x="5984" y="1476"/>
         </scene>
         <!--Map Search Table View Controller-->
         <scene sceneID="2ZH-9v-hLY">
@@ -909,7 +920,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3U-sX-3W1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6672" y="1476"/>
+            <point key="canvasLocation" x="6816" y="1477"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xvs-2s-hhu">
@@ -928,7 +939,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPT-Qz-BGl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5074" y="1476"/>
+            <point key="canvasLocation" x="5097" y="1476"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="gxG-ZO-7jg">
@@ -1023,7 +1034,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZL-Pc-1wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5906" y="802"/>
+            <point key="canvasLocation" x="6815.9420289855079" y="801.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCp-cW-PVZ">
@@ -1033,11 +1044,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="qW2-YQ-Nl7">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.15686274510000001" green="0.3921568627" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1047,7 +1059,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JjI-V8-Wbh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5074" y="802"/>
+            <point key="canvasLocation" x="5984.057971014493" y="801.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QKV-yp-ZWw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eBp-mG-Fix" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="3p4-aO-LaC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.53725490200000003" green="0.76862745099999996" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8tx-Rj-GY4" kind="relationship" relationship="rootViewController" id="rgb-Bb-Kc9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RvI-Qs-jgn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="479"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1056,6 +1092,8 @@
     <resources>
         <image name="AddButton" width="22" height="22"/>
         <image name="PlaceholderProfilePic" width="180" height="180"/>
+        <image name="alertIcon" width="26" height="26"/>
         <image name="blueCheckMark" width="384" height="418"/>
+        <image name="logIcon" width="26" height="26"/>
     </resources>
 </document>

@@ -12,14 +12,14 @@ import ContactsUI
 
 class RecentContactsTableViewController: UITableViewController {
     
-    var recentContacts: [CNContact]?
+    var contacts: [CNContact]?
     var selectedContacts = [CNContact]()
 
     var contactsSelectedCallback: ContactsSelectedCallback? = nil
     
     override func viewDidLoad() {
       super.viewDidLoad()
-        recentContacts = getRecentContacts()
+        contacts = getContactsToMessage()
     }
     
     @IBAction func doneSelectingRecipients(_ sender: UIBarButtonItem) {
@@ -30,7 +30,7 @@ class RecentContactsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let recentContacts = recentContacts {
+        if let recentContacts = contacts {
             return recentContacts.count
         }
         
@@ -40,7 +40,7 @@ class RecentContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
       
-      if let recentContacts = recentContacts, let cell = cell as? FriendCell {
+      if let recentContacts = contacts, let cell = cell as? FriendCell {
         let friend = Friend(contact: recentContacts[indexPath.row])
         cell.friend = friend
       }
@@ -57,7 +57,7 @@ class RecentContactsTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         
-        if let recentContacts = recentContacts {
+        if let recentContacts = contacts {
             selectedContacts.append(recentContacts[indexPath.row])
         }
     }

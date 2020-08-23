@@ -16,9 +16,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
+        self.navigationItem.setHidesBackButton(true, animated: true);
+
         nameTextField.delegate = self
         phoneNumberTextField.delegate = self
         passwordTextField.delegate = self
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -35,6 +38,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func goToTabController() {
         let tabbarVC = storyboard?.instantiateViewController(withIdentifier: "TabbarVC") as! UITabBarController
+        navigationController?.setNavigationBarHidden(true, animated: true)
         navigationController?.pushViewController(tabbarVC, animated: true)
     }
     

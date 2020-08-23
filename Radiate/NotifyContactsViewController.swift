@@ -20,6 +20,7 @@ class NotifyContactsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationItem.title = "Notify My Contacts"
     }
 }

@@ -28,6 +28,9 @@
 		8811958824F0DF78000CEF7B /* MapSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */; };
 		8861CA2D24F1B2D90025C576 /* RecentContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861CA2C24F1B2D90025C576 /* RecentContactsTableViewController.swift */; };
 		8861CA2F24F1BB6F0025C576 /* NotifyContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8861CA2E24F1BB6F0025C576 /* NotifyContactsViewController.swift */; };
+		88AD84C924F2122900009BC6 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD84C824F2122900009BC6 /* GifViewController.swift */; };
+		88AD84CB24F2133600009BC6 /* GifUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD84CA24F2133600009BC6 /* GifUI.swift */; };
+		88AD84CD24F213A700009BC6 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 88AD84CC24F213A700009BC6 /* logo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		8811958724F0DF78000CEF7B /* MapSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchTableViewController.swift; sourceTree = "<group>"; };
 		8861CA2C24F1B2D90025C576 /* RecentContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentContactsTableViewController.swift; sourceTree = "<group>"; };
 		8861CA2E24F1BB6F0025C576 /* NotifyContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyContactsViewController.swift; sourceTree = "<group>"; };
+		88AD84C824F2122900009BC6 /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
+		88AD84CA24F2133600009BC6 /* GifUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifUI.swift; sourceTree = "<group>"; };
+		88AD84CC24F213A700009BC6 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,8 @@
 				8811957C24F0C46E000CEF7B /* VisitsViewController.swift */,
 				8811953624F0862D000CEF7B /* SceneDelegate.swift */,
 				8811953A24F0862D000CEF7B /* Main.storyboard */,
+				88AD84C824F2122900009BC6 /* GifViewController.swift */,
+				88AD84CA24F2133600009BC6 /* GifUI.swift */,
 				8861CA2C24F1B2D90025C576 /* RecentContactsTableViewController.swift */,
 				8811958324F0D727000CEF7B /* AddVisitViewController.swift */,
 				8811957624F0AEF4000CEF7B /* MessageViewController.swift */,
@@ -145,6 +153,7 @@
 				8811953F24F0862E000CEF7B /* LaunchScreen.storyboard */,
 				8811954224F0862E000CEF7B /* Info.plist */,
 				8811957224F08797000CEF7B /* Common.swift */,
+				88AD84CC24F213A700009BC6 /* logo.gif */,
 			);
 			path = Radiate;
 			sourceTree = "<group>";
@@ -272,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8811954124F0862E000CEF7B /* LaunchScreen.storyboard in Resources */,
+				88AD84CD24F213A700009BC6 /* logo.gif in Resources */,
 				8811953E24F0862E000CEF7B /* Assets.xcassets in Resources */,
 				8811953C24F0862D000CEF7B /* Main.storyboard in Resources */,
 			);
@@ -302,6 +312,7 @@
 				8811953524F0862D000CEF7B /* AppDelegate.swift in Sources */,
 				8811957724F0AEF4000CEF7B /* MessageViewController.swift in Sources */,
 				8811957B24F0C1A0000CEF7B /* Visit.swift in Sources */,
+				88AD84CB24F2133600009BC6 /* GifUI.swift in Sources */,
 				8861CA2F24F1BB6F0025C576 /* NotifyContactsViewController.swift in Sources */,
 				8811957524F08819000CEF7B /* SignUpViewController.swift in Sources */,
 				8811957924F0C02C000CEF7B /* VisitCell.swift in Sources */,
@@ -309,6 +320,7 @@
 				8811958624F0DC67000CEF7B /* MapViewController.swift in Sources */,
 				8811957D24F0C46E000CEF7B /* VisitsViewController.swift in Sources */,
 				8811953724F0862D000CEF7B /* SceneDelegate.swift in Sources */,
+				88AD84C924F2122900009BC6 /* GifViewController.swift in Sources */,
 				8811956E24F086BA000CEF7B /* FriendsViewController.swift in Sources */,
 				8811956C24F086BA000CEF7B /* Friend.swift in Sources */,
 				8811958424F0D727000CEF7B /* AddVisitViewController.swift in Sources */,

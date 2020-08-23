@@ -15,9 +15,16 @@ class MessageViewController: UIViewController, UITextViewDelegate, CNContactPick
     
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var diagnosisDatePicker: UIDatePicker!
+    @IBOutlet weak var diagnosisDateLabel: UILabel!
+    
     var selectedContacts: [CNContact]?
     
     override func viewDidLoad() {
+        if (!userTestedPositive) {
+            diagnosisDatePicker.isHidden = true
+            diagnosisDateLabel.isHidden = true
+        }
+        
         messageTextView.delegate = self
         
         addMessageTextViewBorder()

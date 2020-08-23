@@ -42,6 +42,8 @@ class FriendsViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.navigationItem.setHidesBackButton(true, animated: true)
+    self.title = "Favorite Contacts"
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -53,11 +55,8 @@ class FriendsViewController: UITableViewController {
   }
   
   @IBAction private func addFriends(sender: UIBarButtonItem) {
-    //additions: allows u to add contacts to your list
-    // 1
     let contactPicker = CNContactPickerViewController()
     contactPicker.delegate = self
-    // 2
     contactPicker.predicateForEnablingContact = NSPredicate(
       format: "phoneNumbers.@count > 0")
     present(contactPicker, animated: true, completion: nil)
@@ -100,11 +99,12 @@ extension FriendsViewController {
   }
   
 }
-//this below implements contact picker. u can select contact from user device and import to app.
+
 //MARK: - CNContactPickerDelegate
 extension FriendsViewController: CNContactPickerDelegate {
   func contactPicker(_ picker: CNContactPickerViewController,
                      didSelect contacts: [CNContact]) {
+    contacts.compactMap { favoriteContacts.append($0)}
     let newFriends = contacts.compactMap { Friend(contact: $0) }
     for friend in newFriends {
       if !friendsList.contains(friend) {

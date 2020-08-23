@@ -11,11 +11,12 @@ import UIKit
 import MapKit
 import ContactsUI
 
-let RADIATE_BLUE = UIColor(red: 0.34, green: 0.54, blue: 1.00, alpha: 1.00)
+let RADIATE_BLUE = UIColor(red: 0.54, green: 0.77, blue: 0.97, alpha: 1.00)
 
 typealias LocationSelectedCallback = (MKPlacemark) -> Void
 typealias ContactsSelectedCallback = ([CNContact]) -> Void
 
+var favoriteContacts = [CNContact]()
 var userVisits = [Visit]()
 var userTestedPositive = false
 
@@ -39,13 +40,17 @@ func getUserContactTestedPositiveMessage() -> String {
     return "Hello, I'm writing to let you know that someone I was in contact with recently tested positive for COVID-19. Because you and I met recently, please take precautions and continue to stay safe."
 }
 
-func getRecentContacts() -> [CNContact] {
+func getContactsToMessage() -> [CNContact] {
     let recentVisits = getRecentVisits()
     
-    let allContacts = recentVisits.map {
+    var allContacts = recentVisits.map {
         $0.contacts
     }.flatMap {
         $0
+    }
+    
+    favoriteContacts.map {
+        allContacts.append($0)
     }
     
     return Array(Set(allContacts))
@@ -73,7 +78,7 @@ func getDateString(date: Date) -> String {
 }
 
 func getLocationString(location: MKPlacemark) -> String {
-    return "\(location.name ?? "Unknown place"))"
+    return "\(location.name ?? "Unknown place")"
 }
 
 func getContactsString(contacts: [CNContact]) -> String {
