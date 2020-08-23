@@ -14,7 +14,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+            if (success) {
+                self.setUpDailyNotifications()
+            }
+        }
+        
         return true
+    }
+    
+    func setUpDailyNotifications() {
+        var dateComponents = DateComponents()
+        //dateComponents.hour = 24
+        dateComponents.minute = 48
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        let content = UNMutableNotificationContent()
+        content.title = "Did you meet anyone today?"
+        content.body = "Log your encounters to help slow the spread of COVID-19."
+
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { error in
+          if error != nil {
+            print("Something went wrong.")
+          }
+        }
     }
 
     // MARK: UISceneSession Lifecycle

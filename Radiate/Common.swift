@@ -83,7 +83,7 @@ func getLocationString(location: MKPlacemark) -> String {
 
 func getContactsString(contacts: [CNContact]) -> String {
     let contactNames = contacts.map { (contact) -> String in
-        contact.givenName
+        "\(contact.givenName) \(contact.familyName)"
     }
     return contactNames.joined(separator:", ")
 }

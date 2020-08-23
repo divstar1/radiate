@@ -543,7 +543,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="62I-Y4-fPM" firstAttribute="centerY" secondItem="RtB-Mx-GiJ" secondAttribute="centerY" id="IZh-Cl-eai"/>
                             <constraint firstItem="62I-Y4-fPM" firstAttribute="centerX" secondItem="RtB-Mx-GiJ" secondAttribute="centerX" id="Q5t-1r-e2K"/>
